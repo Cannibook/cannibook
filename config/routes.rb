@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  
+  # map the index action instead of root. Now we can link_to index_url
+  map.index '/', :controller => 'pages', :action => 'index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
