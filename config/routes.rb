@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # map the pages controller, so it appears they come from the root of the site
   # e.g. cannibook.com/about instead of cannibook.com/pages/about
-  map.connect ':action', :controller => 'pages'
+  map.connect '/about', :controller => 'pages', :action => 'about'
   
   # The priority is based upon order of creation: first created -> highest priority.
 
