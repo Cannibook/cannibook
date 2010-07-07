@@ -1,0 +1,12 @@
+#density, #trim { margin-left: 10px; width: 150px; }
+
+.ui-slider .ui-slider-handle {
+  height: 15px !important;
+  width: 15px !important;
+}
+
+.ui-slider-horizontal { height: 8px !important;}
+
+.success {
+  color: darkgreen;
+}
