@@ -3,6 +3,10 @@ ActionController::Routing::Routes.draw do |map|
   # map the index action instead of root. Now we can link_to index_url
   map.index '/', :controller => 'pages', :action => 'index'
   
+  # map the pages controller, so it appears they come from the root of the site
+  # e.g. cannibook.com/about instead of cannibook.com/pages/about
+  map.connect ':action', :controller => 'pages'
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
