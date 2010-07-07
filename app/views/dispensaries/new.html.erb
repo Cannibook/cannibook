@@ -1,0 +1,34 @@
+<h2>New dispensary</h2>
+
+<%= error_messages_for :dispensary %>
+
+<% form_for @dispensary do |f| -%>
+  <p>
+  <%= f.label :name, "Name" %><br />
+  <%= f.text_field :name %>
+  </p>
+  
+  <p>
+    <%= f.label :street, "Street" %><br />
+    <%= f.text_field :street %>
+  </p>
+  
+  <p>
+    <%= f.label :city, "City" %><br />
+    <%= f.text_field :city %>
+  </p>
+  
+  <p>
+    <%= f.label :state, "State" %><br />
+    <%= f.text_field :state %>
+  </p>
+  
+  <p>
+    <%= f.label :zip, "Zipcode" %><br />
+    <%= f.text_field :zip %>
+  </p>
+  
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end -%>

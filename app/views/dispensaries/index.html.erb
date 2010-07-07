@@ -1,0 +1,35 @@
+<h2>Dispensaries</h2>
+
+<table border="0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for dispensary in @dispensaries -%>
+    <tr>
+      <td><%= dispensary.name %></td>
+      <td><%= dispensary.street %></td>
+      <td><%= dispensary.city %></td>
+      <td><%= dispensary.state %></td>
+      <td><%= dispensary.zip %></td>
+      <td><%= link_to "Edit", edit_dispensary_path(dispensary) %></td>
+      <td><%= link_to "Delete", 
+                      dispensary, 
+                      :confirm => "Are you sure you want to delete this dispensary?",
+                      :method  => :delete %></td>
+    </tr>
+  <% end -%>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to "New Dispensary", new_dispensary_path %>
