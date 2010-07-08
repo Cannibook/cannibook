@@ -1,0 +1,33 @@
+<h2>Strains</h2>
+
+<table border="0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Density</th>
+      <th>Trim</th>
+      <th>Genome</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for strain in @strains -%>
+    <tr>
+      <td><%= strain.name %></td>
+      <td><%= strain.density %></td>
+      <td><%= strain.trim %></td>
+      <td><%= strain.genome %></td>
+      <td><%= link_to "Edit", edit_strain_path(strain) %></td>
+      <td><%= link_to "Delete", 
+                      strain, 
+                      :confirm => "Are you sure you want to delete this strain?",
+                      :method  => :delete %></td>
+    </tr>
+  <% end -%>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to "New Strain", new_strain_path %>

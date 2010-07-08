@@ -7,7 +7,11 @@ ActionController::Routing::Routes.draw do |map|
   # e.g. cannibook.com/about instead of cannibook.com/pages/about
   map.about '/about', :controller => 'pages', :action => 'about'
   
+  # this is used for the autocomplete callback
+  map.connect '/list_dispensaries', :controller => 'dispensaries', :action => 'list'
+  
   map.resources :dispensaries
+  map.resources :strains
   
   # The priority is based upon order of creation: first created -> highest priority.
 

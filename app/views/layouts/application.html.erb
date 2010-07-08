@@ -13,7 +13,7 @@
 	<!-- css -->
 	<%= stylesheet_link_tag 'main', :media => 'screen, projector'  %>
 	<%= stylesheet_link_tag 'jquery-ui', :media => 'screen' %>
-	<%= stylesheet_link_tag 'print', :media => 'print' %>
+	<%# stylesheet_link_tag 'print', :media => 'print' %>
 	<!--[if lte IE7]>
 	  <%= stylesheet_link_tag 'ie', :media => 'screen, projector' %>
 	  <%= stylesheet_link_tag 'ie-print', :media => 'print' %>
@@ -38,7 +38,7 @@
   <h1>Cannibook</h1>
   <div>
     <ul>
-      <li><%# link_to "Strains", strains_url %></li>
+      <li><%= link_to "Strains", strains_url %></li>
       <li><%= link_to "Dispensaries", dispensaries_url %></li>
       <li><%= link_to "About", about_url %></li>
     </ul>

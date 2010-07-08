@@ -1,0 +1,37 @@
+<h2>New strain</h2>
+
+<%= error_messages_for :strain %>
+
+<% form_for @strain do |f| -%>
+  <p>
+  <%= f.label :name, "Name" %><br />
+  <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :density, "Density" %><br />
+    <%= f.hidden_field :density, :value => '1' %>
+    <div id="density"></div><span class="density">1</span>
+  </p>
+  
+  <p>
+    <%= f.label :trim, "Trim" %><br />
+    <%= f.hidden_field :trim, :value => '1'  %>
+    <div id="trim"></div><span class="trim">1</span>
+  </p>
+  
+  <p>
+    <%= f.label :genome, "Genome" %><br />
+    <%= f.select(:genome, %w{ Indica Sativa Hybrid }) %>
+  </p>
+  
+  <p>
+    <%= f.label :dispensary_id, "Dispensary" %><br />
+    <%= f.text_field :dispensary_id, :class => 'autocomplete' %>
+    <%# f.collection_select(:dispensary_id, @dispensaries, :id, :name) %>
+  </p>
+
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end -%>
