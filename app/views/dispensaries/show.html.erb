@@ -1,8 +1,9 @@
 <h2><%=h @dispensary.name %></h2>
 
-<address>
-  <%=h @dispensary.address %>
-</address>
+<%= GMap.header %>
+<%= javascript_include_tag("markerGroup") %>
+<%= @map.to_html%>
+<%= @map.div(:width => 500, :height => 450)%>
 
 <br />
 

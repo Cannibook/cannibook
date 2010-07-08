@@ -7,6 +7,24 @@ class DispensariesController < ApplicationController
   end
 
   def show
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true,:map_type => true)
+    @map.icon_global_init(GIcon.new(:image => '/images/weedleaf.png',
+                                    :icon_size => GSize.new(48, 48),
+                                    :icon_anchor => GPoint.new(24, 24),
+                                    :info_window_anchor => GPoint.new(22, 0),
+                                    :info_shadow_anchor => GPoint.new(18, 15)), "icon_source")
+    icon_source = Variable.new("icon_source")
+    
+    @map.center_zoom_init([@dispensary.lat, @dispensary.lng],4)
+    info = "<strong>#{@dispensary.name}</strong><br />" +
+    "#{@dispensary.street}<br />" +
+    "#{@dispensary.city} #{@dispensary.state}, #{@dispensary.zip}"
+    
+    @map.overlay_init(GMarker.new([@dispensary.lat, @dispensary.lng],
+                      :title => "Hello",
+                      :info_window => info,
+                      :icon => icon_source))
   end
 
   def new

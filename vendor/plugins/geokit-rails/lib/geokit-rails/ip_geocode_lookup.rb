@@ -25,6 +25,7 @@ module Geokit
     # uses that value.  The last resort is to call the web service to
     # get the value.
     def store_ip_location
+      puts 'in store ip location'
       session[:geo_location] ||= retrieve_location_from_cookie_or_service
       cookies[:geo_location] = { :value => session[:geo_location].to_yaml, :expires => 30.days.from_now } if session[:geo_location]
     end    
@@ -32,6 +33,7 @@ module Geokit
     # Uses the stored location value from the cookie if it exists.  If
     # no cookie exists, calls out to the web service to get the location. 
     def retrieve_location_from_cookie_or_service
+      puts 'in retrieve'
       return YAML.load(cookies[:geo_location]) if cookies[:geo_location]
       location = Geocoders::MultiGeocoder.geocode(get_ip_address)
       return location.success ? location : nil
@@ -40,7 +42,11 @@ module Geokit
     # Returns the real ip address, though this could be the localhost ip
     # address.  No special handling here anymore.
     def get_ip_address
-      request.remote_ip
+      if Rails.env.development?
+        '173.194.33.104'
+      else
+        request.remote_ip
+      end
     end
   end
 end
