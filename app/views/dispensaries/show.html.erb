@@ -1,6 +1,6 @@
 <h2><%=h @dispensary.name %></h2>
 
-<%= GMap.header %>
+<%= GMap.header(:host => request.host) %>
 <%= javascript_include_tag("markerGroup") %>
 <%= @map.to_html%>
 <%= @map.div(:width => 500, :height => 450)%>
