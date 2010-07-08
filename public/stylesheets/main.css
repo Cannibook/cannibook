@@ -10,3 +10,82 @@
 .success {
   color: darkgreen;
 }
+
+
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+
+#wrapper{
+width: 960px;
+margin: 0 auto;
+}
+
+#header{
+padding: 30px 0 40px;
+border-bottom: 1px solid #ddd;
+}
+
+hr{
+display: none;
+}
+
+h1{
+font-size: 14px;
+margin: 0;
+float: left;
+}
+
+
+h1 a{
+text-decoration: none;
+color: #333;
+margin-right: 60px;
+}
+
+ul#nav{
+float: left;
+margin: 0;
+padding: 0;
+}
+
+ul#nav li{
+float: left;
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+
+ul#nav li a{
+text-decoration: none;
+font-size: 14px;
+float: left;
+margin: 0 20px;
+color: #333;
+}
+
+
+ul#nav li a:hover{
+text-decoration: underline;
+}
+
+
+#content{
+clear: both;
+}
+
+
+
+#footer{
+clear: both;
+height: 40px;
+border: 1px solid #ddd;
+border-left: none;
+border-right: none;
+margin-top: 80px;
+}
