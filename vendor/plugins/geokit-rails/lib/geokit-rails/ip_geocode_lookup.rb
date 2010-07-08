@@ -43,7 +43,7 @@ module Geokit
     # address.  No special handling here anymore.
     def get_ip_address
       if Rails.env.development?
-        '173.194.33.104'
+        '97.106.124.238'
       else
         puts "Getting ip... #{request.remote_ip}"
         request.remote_ip
