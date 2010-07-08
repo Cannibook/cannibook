@@ -45,6 +45,7 @@ module Geokit
       if Rails.env.development?
         '173.194.33.104'
       else
+        puts "Getting ip... #{request.remote_ip}"
         request.remote_ip
       end
     end
