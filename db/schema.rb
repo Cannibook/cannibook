@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100707170209) do
+ActiveRecord::Schema.define(:version => 20100708043047) do
 
   create_table "dispensaries", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(:version => 20100707170209) do
     t.string   "zip"
     t.float    "lng"
     t.float    "lat"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "strains", :force => true do |t|
+    t.string   "name"
+    t.integer  "density"
+    t.integer  "trim"
+    t.string   "genome"
+    t.integer  "dispensary_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
