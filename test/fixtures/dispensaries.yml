@@ -12,3 +12,11 @@ valid_existing_club:
   city: cupertino
   state: ca
   zip: 12345
+  
+valid_club_for_updating:
+  id: 10
+  name: VIP Club
+  street: 123 Main st.
+  city: hollywood
+  state: ca
+  zip: 12345
