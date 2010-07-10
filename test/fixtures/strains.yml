@@ -5,3 +5,11 @@
 #
 # two:
 #   column: value
+
+valid_strain_for_update:
+  id: 5
+  name: Big Bud
+  
+strain_for_delete:
+  id: 10
+  name: Hydro
