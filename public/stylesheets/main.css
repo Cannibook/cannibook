@@ -123,6 +123,8 @@ table td
 	padding: 8px;
 	color: #78AB46;
 }
+
+table td a { color: #78AB46; }
 table .odd
 {
 	background: #e8edff; 

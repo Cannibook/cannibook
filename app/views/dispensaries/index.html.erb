@@ -15,7 +15,7 @@
   <tbody>
   <% for dispensary in @dispensaries -%>
     <tr>
-      <td><%= dispensary.name %></td>
+      <td><%= link_to dispensary.name, dispensary_path(dispensary) %></td>
       <td><%= dispensary.street %></td>
       <td><%= dispensary.city %></td>
       <td><%= dispensary.state %></td>
