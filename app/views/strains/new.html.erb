@@ -21,6 +21,16 @@
   </p>
   
   <p>
+    <%= f.label :smell_list, "Smell (separate with a comma)" %><br />
+    <%= f.text_field :smell_list %>
+  </p>
+  
+  <p>
+    <%= f.label :taste_list, "Taste (separate with a comma)" %><br />
+    <%= f.text_field :taste_list %>
+  </p>
+  
+  <p>
     <%= f.label :genome, "Genome" %><br />
     <%= f.select(:genome, %w{ Indica Sativa Hybrid }) %>
   </p>
