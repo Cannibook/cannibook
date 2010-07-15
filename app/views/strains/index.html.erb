@@ -14,7 +14,7 @@
   <tbody>
   <% for strain in @strains -%>
     <tr>
-      <td><%= strain.name %></td>
+      <td><%= link_to strain.name, strain_path(strain) %></td>
       <td><%= strain.density %></td>
       <td><%= strain.trim %></td>
       <td><%= strain.genome %></td>
