@@ -7,8 +7,8 @@
 <%= @map.div(:width => 960, :height => 212)%>
 <p>We think your location is <strong><%= @user_location[:city] %>, <%= @user_location[:state] %></strong></p>
 
-<form action="" method="post" accept-charset="utf-8">
-  <label for="zipcode">Enter new zip</label>
-  <input type="text" name="zipcode" value="" id="zipcode" />
-  <input type="submit" value="SHOW ME" />
-</form>
+<%- form_tag "/locations/update", :method => "post" do -%>
+  <%= label_tag :zipcode, "Enter new zip" %>
+  <%= text_field_tag :zipcode %>
+  <%= submit_tag "Search" %>
+<%- end -%>
