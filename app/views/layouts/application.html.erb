@@ -3,36 +3,40 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<!-- meta -->
-	<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
-	<meta name="description" content="" />
-	<meta name="KEYWORDS" content="" />
-	<meta name="Copyright" content="Cannibook" />
-	<meta name="Language" content="English" />
+  <!-- meta -->
+  <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+  <meta name="description" content="" />
+  <meta name="KEYWORDS" content="" />
+  <meta name="Copyright" content="Cannibook" />
+  <meta name="Language" content="English" />
 
-	<!-- css -->
-	<%= stylesheet_link_tag 'main', :media => 'screen, projector'  %>
-	<%= stylesheet_link_tag 'jquery-ui', :media => 'screen' %>
-	<%# stylesheet_link_tag 'print', :media => 'print' %>
-	<!--[if lte IE7]>
-	  <%= stylesheet_link_tag 'ie', :media => 'screen, projector' %>
-	  <%= stylesheet_link_tag 'ie-print', :media => 'print' %>
-	<![endif]-->
-	
-	<!-- js -->
-	<%= javascript_include_tag 'jquery-1.4.2.min' %>
-	<%= javascript_include_tag 'jquery-ui.min.js' %>
-	<%= javascript_include_tag 'application' %>
-	<script type="text/javascript">
-	
-	</script>
-	
-	<!-- favicon -->
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="icon" type="image/ico" href="/favicon.ico">
+  <!-- css -->
+  <%= stylesheet_link_tag 'main', :media => 'screen, projector'  %>
+  <%= stylesheet_link_tag 'jquery-ui', :media => 'screen' %>
+  <%# stylesheet_link_tag 'print', :media => 'print' %>
+  <!--[if lte IE7]>
+    <%= stylesheet_link_tag 'ie', :media => 'screen, projector' %>
+    <%= stylesheet_link_tag 'ie-print', :media => 'print' %>
+  <![endif]-->
 
-	<!-- title -->
-	<title><%= title_for_layout %></title>
+  <!-- js -->
+  <%= javascript_include_tag 'jquery-1.4.2.min' %>
+  <%= javascript_include_tag 'jquery-ui.min.js' %>
+  <%= javascript_include_tag 'application' %>
+  <%= yield(:extra_js_files) %>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      
+      <%= yield(:extra_js_source) %>
+    });
+  </script>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/ico" href="/favicon.ico">
+
+  <!-- title -->
+  <title><%= title_for_layout %></title>
 </head>
 <body<%= id_for_body %>>
   <div id="wrapper">
@@ -57,8 +61,6 @@
 
       <%= yield %>
     </div> <!-- end #content -->
-
-    <hr />
 
     <div id="footer">
       <%= debug(params) if Rails.env.development? %>

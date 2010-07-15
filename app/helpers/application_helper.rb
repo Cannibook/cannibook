@@ -25,4 +25,18 @@ module ApplicationHelper
     id = request[:controller].to_s
     " id=\"#{id}\""
   end
+  
+  # call this in a view file to add your javascript files to the head of the document
+  # instead of the body of the document
+  def add_js_files(*files)
+    content_for(:extra_js_files) do
+      files.collect { |file| javascript_include_tag(file) + "\n  " }
+    end
+  end
+  
+  # call this in a view file to add your javascript source to the head of the document
+  # instead of the body of the document
+  def add_js_source(source)
+    content_for(:extra_js_source) { source }
+  end
 end

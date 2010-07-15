@@ -1,8 +1,9 @@
+<%# add the necessary gmaps javascript files to the head  -%>
+<%- add_js_files 'markerGroup', GMap.header(:host => request.host, :with_vml => false), 'ym4r-gm' -%>
+<%- add_js_source @map.to_html(:no_script_tag => true) -%>
+
 <h1><%=h @dispensary.name %></h1>
 
-<%= GMap.header(:host => request.host) %>
-<%= javascript_include_tag("markerGroup") %>
-<%= @map.to_html%>
 <%= @map.div(:width => 500, :height => 450)%>
 
 <br />
