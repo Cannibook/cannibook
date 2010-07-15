@@ -1,6 +1,40 @@
-<h1><%=h @strain.name %></h1>
+<style type="text/css" media="screen">
+  .activity {
+    background: #efefef;
+    border: 1px solid #ccc;
+    color: #232323;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  .left { float: left; }
+  .right { float: right; }
+</style>
 
-<%# @strain.dispensary.name %>
+<%= image_tag 'placeholder.jpg', :class => 'left' %>
+
+<div id="strain" class="left">
+  <h1><%=h @strain.name %></h1>
+  <p>Dense&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fruity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Well Trimmed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sativa</p>
+  <p>Available at 120 dispensaries</p>
+</div> <!-- end #strain -->
+
+<br style="clear:left;">
+
+<div class="activity">
+  <em>Morgan liked <%=h @strain.name %></em>
+</div> <!-- end .activity -->
+
+<div class="activity">
+  <em>Morgan said "Shit is bomb!"</em>
+</div> <!-- end .activity -->
+
+<div class="activity">
+  <em>Morgan gave <%=h @strain.name %> 5 out of 5 stars!</em>
+</div> <!-- end .activity -->
+
+<div class="activity">
+  <em>Mike found <%=h @strain.name %> at HMC</em>
+</div> <!-- end .activity -->
 
 <br />
 
