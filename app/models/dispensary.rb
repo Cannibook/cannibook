@@ -1,4 +1,6 @@
 class Dispensary < ActiveRecord::Base
+  acts_as_mappable
+  
   before_validation :geocode
   
   has_many :strains
