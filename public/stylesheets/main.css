@@ -129,3 +129,28 @@ table .odd
 {
 	background: #e8edff; 
 }
+
+.button {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.25, rgb(219,219,219)), color-stop(0.63, rgb(247,247,247)));
+  background-image: -moz-linear-gradient(center bottom, rgb(219,219,219) 25%, rgb(247,247,247) 63%);
+  color: rgba(0,0,0,0.6);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  margin-left: 5px;
+  padding: 6px 12px 6px;
+  position: relative;
+  text-decoration: none;
+/*  text-shadow: 0 1px 1px rgba(0,0,0,0.4);*/
+  
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-box-shadow: 0 1px 3px #999;
+  -webkit-box-shadow: 0 1px 3px #999;
+}
+
+.button:hover {
+  -moz-box-shadow: 0 1px 4px rgba(26,120,16,0.5);
+  -webkit-box-shadow: 0 1px 4px rgba(26,120,16,0.5);
+}
