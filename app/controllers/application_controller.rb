@@ -5,7 +5,7 @@ include Geokit::Geocoders
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  
+  #
   geocode_ip_address # grab the users ip and stick in a session/cookie
   
   before_filter :geokit
